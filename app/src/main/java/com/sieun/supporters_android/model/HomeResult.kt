@@ -31,5 +31,5 @@ data class Category(
     val name: String,
 
     @SerializedName("image_url")
-    val thumbnailURL: String
+    val imageUrl: String
 )

@@ -24,7 +24,7 @@
             android:background="@drawable/bg_rectangle_radius_40dp"
             android:backgroundTint="@color/teal_200"
             android:scaleType="center"
-            app:image="@{item.thumbnailURL}"
+            app:image="@{item.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

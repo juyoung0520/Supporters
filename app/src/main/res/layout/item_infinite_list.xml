@@ -23,7 +23,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/desc_domain_image"
-            android:background="@drawable/bg_ractengle_radius_12dp"
+            android:background="@drawable/list_bg_rectangle_20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:image="@{categoryItem.thumbnailUrl}"
