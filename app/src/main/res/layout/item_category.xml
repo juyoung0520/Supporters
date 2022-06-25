@@ -11,20 +11,37 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/bg_ractengle_radius_12dp"
-            android:gravity="center"
-            android:text="@{item.name}"
-            app:layout_constraintTop_toTopOf="parent"
+        <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_rectangle_radius_40dp"
             android:backgroundTint="@color/teal_200"
-            tools:text="카테고리명" />
+            android:layout_marginHorizontal="5dp"
+            android:scaleType="center"
+            app:image="@{item.thumbnailURL}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_category_name"
+            android:text="@{item.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="환경" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

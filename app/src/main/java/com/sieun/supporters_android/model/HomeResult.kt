@@ -30,6 +30,6 @@ data class Category(
     val id: Long,
     val name: String,
 
-    @SerializedName("thumbnail_url")
+    @SerializedName("image_url")
     val thumbnailURL: String
 )

@@ -9,7 +9,8 @@ import com.sieun.supporters_android.databinding.ItemCategoryBinding
 import com.sieun.supporters_android.model.Category
 
 class CategoryAdapter(
-    val onClickItem: (Category) -> Unit
+    private val onClickItem: (Category) -> Unit,
+    private val categoryWidth: Int
 ) : ListAdapter<Category, CategoryAdapter.ViewHolder>(callback) {
     companion object {
         private val callback = object : DiffUtil.ItemCallback<Category>() {
@@ -30,7 +31,12 @@ class CategoryAdapter(
                 .let(::ViewHolder)
         }
 
-        fun bind(item: Category, onClickItem: (Category) -> Unit) = with(binding) {
+        fun bind(
+            item: Category,
+            onClickItem: (Category) -> Unit,
+            width: Int
+        ) = with(binding) {
+            ivCategory.layoutParams = ViewGroup.LayoutParams(width, width)
             this.item = item
             root.setOnClickListener { onClickItem(item) }
         }
@@ -40,5 +46,5 @@ class CategoryAdapter(
         ViewHolder.from(parent)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position), onClickItem)
+        holder.bind(getItem(position), onClickItem, categoryWidth)
 }

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityHomeBinding
+import com.sieun.supporters_android.dpToPx
 import com.sieun.supporters_android.model.Banner
 import com.sieun.supporters_android.model.Category
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModels()
     private val bannerAdapter by lazy { BannerAdapter(::onClickBanner) }
-    private val categoryAdapter by lazy { CategoryAdapter(::onClickCategory) }
+    private val categoryAdapter by lazy { CategoryAdapter(::onClickCategory, categoryWidth) }
+    private val categoryWidth by lazy { (resources.displayMetrics.widthPixels - dpToPx(40)) / 2 }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
