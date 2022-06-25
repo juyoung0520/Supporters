@@ -1,6 +1,10 @@
 package com.sieun.supporters_android.ui
 
+import android.graphics.Outline
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
+import android.view.ViewOutlineProvider
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -10,6 +14,7 @@ import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityListBinding
 import com.sieun.supporters_android.ui.list.CategoryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class ListActivity: AppCompatActivity() {
@@ -19,6 +24,21 @@ class ListActivity: AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
     private lateinit var categoryName: String
     private val categoryListAdapter by lazy { CategoryListAdapter(categoryName) }
+    private val outlineProvider: ViewOutlineProvider by lazy {
+        object : ViewOutlineProvider() {
+            override fun getOutline(view: View, outline: Outline) {
+                val cornerRadiusDP = 40f
+                TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    cornerRadiusDP,
+                    resources.displayMetrics
+                ).let { cornerRadius ->
+                    val top = (0 - cornerRadius).roundToInt()
+                    outline.setRoundRect(0, top, view.width, view.height, cornerRadius)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +46,10 @@ class ListActivity: AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_list)
         binding.vm = viewModel
         binding.lifecycleOwner = this
-        binding.categoryThumbnail.clipToOutline = true
+        binding.categoryThumbnail.apply {
+            outlineProvider = this@ListActivity.outlineProvider
+            clipToOutline = true
+        }
 
         processIntent()
         fetchCategoryItems(categoryNum)
