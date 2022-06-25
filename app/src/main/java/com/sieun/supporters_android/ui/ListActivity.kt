@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ListActivity: AppCompatActivity() {
     private val viewModel: ListViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

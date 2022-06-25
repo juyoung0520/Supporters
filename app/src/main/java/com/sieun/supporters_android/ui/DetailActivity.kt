@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class DtailActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class DetailActivity : AppCompatActivity() {
     private val viewModel: DetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

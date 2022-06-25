@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityBannerBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BannerActivity : AppCompatActivity() {
     private val viewModel: BannerViewModel by viewModels()
 
