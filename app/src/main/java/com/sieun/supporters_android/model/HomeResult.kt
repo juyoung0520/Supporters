@@ -28,5 +28,8 @@ data class SponsorItem(
 
 data class Category(
     val id: Long,
-    val name: String
+    val name: String,
+
+    @SerializedName("thumbnail_url")
+    val thumbnailURL: String
 )

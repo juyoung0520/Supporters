@@ -1,23 +1,21 @@
 package com.sieun.supporters_android.ui
 
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.sieun.supporters_android.R
 import com.sieun.supporters_android.databinding.ActivityListBinding
-import com.sieun.supporters_android.ui.list.CategoryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ListActivity: AppCompatActivity() {
 
     private val viewModel: ListViewModel by viewModels()
-    private var categoryNum = 0
-    private var categoryAdapter = CategoryListAdapter()
+    private var categoryNum = 0L
     private lateinit var binding: ActivityListBinding
+    private lateinit var categoryName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,16 +24,29 @@ class ListActivity: AppCompatActivity() {
         binding.vm = viewModel
         binding.lifecycleOwner = this
 
-        // ToDo categories ID get
-        categoryNum = 1
-
+        processIntent()
         fetchCategoryItems(categoryNum)
+        setBackButton()
     }
 
-    private fun fetchCategoryItems(categoryNum: Int) {
+    private fun fetchCategoryItems(categoryNum: Long) {
         viewModel.fetchCategoryItem(categoryNum)
-        println("fetchCategoryItems called")
     }
 
+    private fun setBackButton() {
+        binding.listBackbutton.setOnClickListener {
+            this.finish()
+        }
+    }
+
+    private fun processIntent() {
+        intent.extras?.let {
+            categoryNum = it.getLong(HomeActivity.CATEGORY_ID)
+            categoryName = it.getString(HomeActivity.CATEGORY_NAME) ?: "Unknown"
+            Glide.with(binding.root)
+                .load(it.getString(HomeActivity.CATEGORY_THUMBNAIL))
+                .into(binding.categoryThumbnail)
+        }
+    }
 
 }
