@@ -20,10 +20,9 @@
             android:id="@+id/iv_banner"
             android:layout_width="match_parent"
             android:layout_height="344dp"
-            android:background="@drawable/bg_rectangle_bottom_radius_40dp"
             android:scaleType="centerCrop"
             app:image="@{item.imageURL}"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"

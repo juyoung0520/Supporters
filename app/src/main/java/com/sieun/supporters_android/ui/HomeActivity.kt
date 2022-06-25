@@ -1,7 +1,11 @@
 package com.sieun.supporters_android.ui
 
 import android.content.Intent
+import android.graphics.Outline
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.View
+import android.view.ViewOutlineProvider
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -12,13 +16,29 @@ import com.sieun.supporters_android.dpToPx
 import com.sieun.supporters_android.model.Banner
 import com.sieun.supporters_android.model.Category
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModels()
-    private val bannerAdapter by lazy { BannerAdapter(::onClickBanner) }
+    private val bannerAdapter by lazy { BannerAdapter(::onClickBanner, outlineProvider) }
     private val categoryAdapter by lazy { CategoryAdapter(::onClickCategory, categoryWidth) }
     private val categoryWidth by lazy { (resources.displayMetrics.widthPixels - dpToPx(40)) / 2 }
+    private val outlineProvider: ViewOutlineProvider by lazy {
+        object : ViewOutlineProvider() {
+            override fun getOutline(view: View, outline: Outline) {
+                val cornerRadiusDP = 40f
+                TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    cornerRadiusDP,
+                    resources.displayMetrics
+                ).let { cornerRadius ->
+                    val top = (0 - cornerRadius).roundToInt()
+                    outline.setRoundRect(0, top, view.width, view.height, cornerRadius)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
