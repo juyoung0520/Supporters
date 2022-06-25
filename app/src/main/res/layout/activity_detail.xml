@@ -21,8 +21,8 @@
         <View
             android:id="@+id/detail_top_bar_v"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/purple_200"
+            android:layout_height="80dp"
+            android:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_btn_back"
             app:layout_constraintBottom_toBottomOf="@id/detail_top_bar_v"
             app:layout_constraintStart_toStartOf="parent" />
@@ -41,10 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="Category name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/detail_back_iv"
             app:layout_constraintStart_toEndOf="@id/detail_back_iv"
             app:layout_constraintTop_toTopOf="@id/detail_back_iv" />
@@ -52,7 +52,7 @@
         <ImageView
             android:id="@+id/detail_main_iv"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="236dp"
             app:image="@{vm.item.thumbnailUrl}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_top_bar_v" />
@@ -61,7 +61,6 @@
             android:id="@+id/detail_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_200"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_main_iv">
@@ -85,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:nestedScrollingEnabled="false"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -96,7 +95,7 @@
 
         <TextView
             android:id="@+id/detail_description_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
@@ -104,17 +103,17 @@
             android:text="@{vm.item.desc}"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_linear_layout" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/detail_supprot_btn"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="120dp"
             android:background="@drawable/btn_rectangle_top_radius_40dp"
             android:fontFamily="@font/pretendard_bold"
             android:onClick="@{()-> activity.onClickButton(vm.item)}"
             android:text="@string/btn_support_navigation"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
