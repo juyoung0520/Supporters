@@ -69,6 +69,7 @@
         </com.google.android.material.chip.ChipGroup>
 
         <include layout="@layout/infinite_list"
+            app:categoryList="@{vm.categoryItemsResult}"
             android:id="@+id/list_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
