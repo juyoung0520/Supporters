@@ -8,9 +8,15 @@
         <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_home.xml" value="0.23822463768115942" />
         <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_list.xml" value="0.1796448087431694" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.19174265450861194" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/activity_list.xml" value="0.22676420820520282" />
         <entry key="app/src/main/res/layout/fragment_infinite_list.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/item_infinite_list.xml" value="0.19166666666666668" />
+=======
+        <entry key="app/src/main/res/layout/activity_list.xml" value="0.31567028985507245" />
+        <entry key="app/src/main/res/layout/item_banner.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="0.10462962962962963" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>
