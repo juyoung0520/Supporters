@@ -17,7 +17,8 @@ data class CategoryItem(
     @SerializedName("description")val desc: String,
     @SerializedName("period_id") val periodId: Int,
     @SerializedName("site_url") val siteUrl: String,
-    @SerializedName("thumbnail_url") val thumbnailUrl: String
+    @SerializedName("thumbnail_url") val thumbnailUrl: String,
+    val tags: String
 ) {
     companion object {
 
