@@ -31,6 +31,7 @@ class BannerAdapter(
         }
 
         fun bind(item: Banner, onClickItem: (Banner) -> Unit) = with(binding) {
+            ivBanner.clipToOutline = true
             this.item = item
             ivBanner.setOnClickListener { onClickItem(item) }
         }
