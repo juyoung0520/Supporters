@@ -37,7 +37,7 @@ class CategoryListAdapter(private val categoryName: String) :
 class CategoryItemViewHolder(val binding: ItemInfiniteListBinding, private val categoryName: String) :
     RecyclerView.ViewHolder(binding.root) {
     init {
-        binding.itemArrowButton.setOnClickListener {
+        binding.root.setOnClickListener {
             Intent(binding.root.context, DetailActivity::class.java)
                 .putExtra(HomeActivity.CATEGORY_NAME, categoryName)
                 .putExtra(ITEM_ID, binding.categoryItem?.id ?: 0)
@@ -45,6 +45,7 @@ class CategoryItemViewHolder(val binding: ItemInfiniteListBinding, private val c
                     binding.root.context.startActivity(it)
                 }
         }
+        binding.itemImageview.clipToOutline = true
     }
 
     fun bind(categoryItem: CategoryItem) {
@@ -53,6 +54,7 @@ class CategoryItemViewHolder(val binding: ItemInfiniteListBinding, private val c
         categoryItem.tags.split(",").forEach {
             TextView(binding.root.context).apply {
                 setTextColor(resources.getColor(R.color.gray02))
+                textSize = 10f
                 background = resources.getDrawable(R.drawable.tv_bg_rectangle)
                 text = "#$it"
                 layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).apply {

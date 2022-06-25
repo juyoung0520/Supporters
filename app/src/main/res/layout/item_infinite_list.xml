@@ -11,22 +11,23 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/list_bg_rectangle_20dp"
-        android:layout_marginVertical="8dp"
-        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
-        android:layout_height="105dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/item_imageview"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginVertical="8dp"
             android:contentDescription="@string/desc_domain_image"
+            app:image="@{categoryItem.thumbnailUrl}"
             android:background="@drawable/list_bg_rectangle_20dp"
+            android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:image="@{categoryItem.thumbnailUrl}"
             tools:src="@drawable/ic_launcher_foreground" />
 
         <TextView
@@ -37,6 +38,7 @@
             android:layout_marginStart="16dp"
             android:textColor="@color/black02"
             android:textStyle="bold"
+            android:textSize="14sp"
             android:maxLines="1"
             android:ellipsize="end"
             android:text="@{categoryItem.title}"
@@ -65,18 +67,6 @@
             app:layout_constraintTop_toBottomOf="@id/item_desc"
             app:layout_constraintLeft_toLeftOf="@id/item_desc"
             android:orientation="horizontal" />
-
-        <ImageButton
-            android:id="@+id/item_arrow_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_arrow_forward_ios_24"
-            android:layout_marginStart="16dp"
-            android:background="@null"
-            app:layout_constraintLeft_toRightOf="@id/item_title"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:contentDescription="@string/desc_item_navigation" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

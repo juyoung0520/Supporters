@@ -26,6 +26,7 @@ class ListActivity: AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_list)
         binding.vm = viewModel
         binding.lifecycleOwner = this
+        binding.categoryThumbnail.clipToOutline = true
 
         processIntent()
         fetchCategoryItems(categoryNum)
@@ -48,9 +49,18 @@ class ListActivity: AppCompatActivity() {
         intent.extras?.let {
             categoryNum = it.getLong(HomeActivity.CATEGORY_ID)
             categoryName = it.getString(HomeActivity.CATEGORY_NAME) ?: "Unknown"
-            Glide.with(binding.root)
+            Glide.with(binding.categoryThumbnail)
                 .load(it.getString(HomeActivity.CATEGORY_IMG))
                 .into(binding.categoryThumbnail)
+        }
+        binding.categoryName.text = categoryName
+        when (categoryName) {
+            "환경" -> { binding.categoryDesc.text = "환경을 지키기 위한 노력을 함께하세요"}
+            "동물" ->{ binding.categoryDesc.text = "동물을 지키기 위한 노력을 함께하세요"}
+            "아동" ->{ binding.categoryDesc.text = "아이들을 지키기 위한 노력을 함께하세요"}
+            "여성" ->{ binding.categoryDesc.text = "여성 인권을 지키기 위한 노력을 함께하세요"}
+            "자연재해" ->{ binding.categoryDesc.text = "재해로부터 지키기 위한 노력을 함께하세요"}
+            else -> { binding.categoryDesc.text = "함께하기 위한 다양한 노력을 함께하세요"}
         }
     }
 
@@ -62,7 +72,7 @@ class ListActivity: AppCompatActivity() {
     }
 
     private fun setChipSelected() {
-        binding.listChipGroupSetting.setOnCheckedStateChangeListener { group, checkedIds ->
+        binding.listChipGroupSetting.setOnCheckedStateChangeListener { _, checkedIds ->
             when(checkedIds.last()) {
                 R.id.list_setting_all -> {
                     viewModel.categoryItemsResult.value?.let {
