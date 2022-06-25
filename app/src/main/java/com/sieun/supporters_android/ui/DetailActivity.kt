@@ -29,6 +29,7 @@ class DetailActivity : AppCompatActivity() {
         intent.extras?.let {
             val id = intent.getLongExtra(ITEM_ID, 0L)
             viewModel.getDetailItem(id)
+            binding.detailTitleTv.text = intent.getStringExtra(HomeActivity.CATEGORY_NAME)
         }
 
         initView(binding)
