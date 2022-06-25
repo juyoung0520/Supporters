@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="105dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/item_imageview"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/desc_domain_image"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:src="@drawable/ic_launcher_foreground" />
-    
-    <TextView
-        android:id="@+id/item_title"
-        android:layout_width="224dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:maxLines="1"
-        android:ellipsize="end"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/item_imageview"
-        tools:text="Title Name 1줄 넘김 시 말줄임 abcdefghihjk"/>
-    
-    <TextView
-        android:id="@+id/item_desc"
-        android:layout_width="224dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="4dp"
-        android:maxLines="1"
-        android:ellipsize="end"
-        app:layout_constraintLeft_toLeftOf="@id/item_title"
-        app:layout_constraintTop_toBottomOf="@id/item_title"
-        tools:text="Description 1줄"/>
+    <data>
+        <variable
+            name="categoryItem"
+            type="com.sieun.supporters_android.model.CategoryItem" />
+    </data>
 
-        
-    <ImageButton
-        android:id="@+id/item_arrow_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_arrow_forward_ios_24"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toRightOf="@id/item_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="@string/desc_item_navigation" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp">
+
+        <ImageView
+            android:id="@+id/item_imageview"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/desc_domain_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:src="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="224dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/item_imageview"
+            tools:text="Title Name 1줄 넘김 시 말줄임 abcdefghihjk" />
+
+        <TextView
+            android:id="@+id/item_desc"
+            android:layout_width="224dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintLeft_toLeftOf="@id/item_title"
+            app:layout_constraintTop_toBottomOf="@id/item_title"
+            tools:text="Description 1줄" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/item_arrow_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_forward_ios_24"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toRightOf="@id/item_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/desc_item_navigation" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

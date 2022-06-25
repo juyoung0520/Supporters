@@ -8,4 +8,7 @@ class ApiRepository @Inject constructor(
     private val service: ApiService
 ) {
     suspend fun getHome() = withContext(Dispatchers.IO) { service.getHome() }
+
+    suspend fun fetchCategoryItem(categoryNum: Int) = service.fetchCategoryItem(categoryNum)
+
 }
