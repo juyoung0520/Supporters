@@ -29,11 +29,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp" />
 
-
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/list_chip_group_setting"
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            app:checkedChip="@id/list_setting_all"
             app:singleLine="true"
             app:layout_constraintTop_toBottomOf="@id/category_thumbnail"
             app:chipSpacing="16dp" >
