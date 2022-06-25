@@ -48,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
     private fun onClickCategory(category: Category) {
         Intent(this, ListActivity::class.java)
             .putExtra(CATEGORY_ID, category.id)
-            .putExtra(CATEGORY_THUMBNAIL, category.thumbnailURL)
+            .putExtra(CATEGORY_IMG, category.imageUrl)
             .putExtra(CATEGORY_NAME, category.name)
             .let { intent -> startActivity(intent) }
     }
@@ -56,7 +56,7 @@ class HomeActivity : AppCompatActivity() {
     companion object {
         const val BANNER_ID = "bannerId"
         const val CATEGORY_ID = "categoryId"
-        const val CATEGORY_THUMBNAIL = "categoryThumbnail"
+        const val CATEGORY_IMG = "categoryImgUrl"
         const val CATEGORY_NAME = "categoryName"
     }
 }

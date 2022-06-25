@@ -31,6 +31,7 @@ class ListActivity: AppCompatActivity() {
         fetchCategoryItems(categoryNum)
         setBackButton()
         setRVSetting()
+        setChipSelected()
     }
 
     private fun fetchCategoryItems(categoryNum: Long) {
@@ -48,7 +49,7 @@ class ListActivity: AppCompatActivity() {
             categoryNum = it.getLong(HomeActivity.CATEGORY_ID)
             categoryName = it.getString(HomeActivity.CATEGORY_NAME) ?: "Unknown"
             Glide.with(binding.root)
-                .load(it.getString(HomeActivity.CATEGORY_THUMBNAIL))
+                .load(it.getString(HomeActivity.CATEGORY_IMG))
                 .into(binding.categoryThumbnail)
         }
     }
@@ -57,6 +58,28 @@ class ListActivity: AppCompatActivity() {
         binding.listContainer.infiniteList.apply {
             adapter = categoryListAdapter
             layoutManager = LinearLayoutManager(this.context)
+        }
+    }
+
+    private fun setChipSelected() {
+        binding.listChipGroupSetting.setOnCheckedStateChangeListener { group, checkedIds ->
+            when(checkedIds.last()) {
+                R.id.list_setting_all -> {
+                    viewModel.categoryItemsResult.value?.let {
+                        categoryListAdapter.submitList((it.items))
+                    }
+                }
+                R.id.list_setting_long -> {
+                    viewModel.categoryItemsResult.value?.let { result ->
+                        categoryListAdapter.submitList((result.items).filter { it.periodId == 1 })
+                    }
+                }
+                else -> {
+                    viewModel.categoryItemsResult.value?.let { result ->
+                        categoryListAdapter.submitList((result.items).filter { it.periodId == 2 })
+                    }
+                }
+            }
         }
     }
 
