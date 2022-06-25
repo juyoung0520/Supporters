@@ -14,7 +14,7 @@ class ListActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding =
-            DataBindingUtil.setContentView<ActivityListBinding>(this, R.layout.activity_detail)
+            DataBindingUtil.setContentView<ActivityListBinding>(this, R.layout.activity_list)
         binding.vm = viewModel
         binding.lifecycleOwner = this
     }
