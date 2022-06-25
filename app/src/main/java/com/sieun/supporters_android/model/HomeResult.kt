@@ -12,7 +12,7 @@ data class Banner(
     val title: String,
     val description: String,
 
-    @SerializedName("image_url")
+    @SerializedName("thumbnail_url")
     val imageURL: String,
 
     @SerializedName("sponsor_item")
@@ -31,5 +31,5 @@ data class Category(
     val name: String,
 
     @SerializedName("image_url")
-    val imageUrl: String
+    val thumbnailURL: String
 )
