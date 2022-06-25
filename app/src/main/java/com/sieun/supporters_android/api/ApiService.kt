@@ -11,5 +11,5 @@ interface ApiService {
     suspend fun getHome(): Response<HomeResult>
 
     @GET("/sponsors/categories/{categoryNum}/items")
-    suspend fun fetchCategoryItem(@Path("categoryNum") categoryNum: Int): Response<CategoryItemsResult>
+    suspend fun fetchCategoryItem(@Path("categoryNum") categoryNum: Long): Response<CategoryItemsResult>
 }

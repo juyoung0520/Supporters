@@ -21,20 +21,16 @@ class ListViewModel @Inject constructor(
         MutableLiveData(CategoryItemsResult.empty)
     val categoryItemsResult: LiveData<CategoryItemsResult> get() = _categoryItemsResult
 
-    fun fetchCategoryItem(categoryNum: Int) {
+    fun fetchCategoryItem(categoryNum: Long) {
         viewModelScope.launch {
             val listResult = withContext(Dispatchers.IO) {
-                println("start category service")
                 repo.fetchCategoryItem(categoryNum)
             }
-            println("listResult: $listResult")
-            println("end category service")
             if (listResult.isSuccessful) {
                 listResult.body()?.let {
                     _categoryItemsResult.value = it
                 }
             }
-            println("categoryItemList: ${categoryItemsResult.value}")
         }
     }
 }
