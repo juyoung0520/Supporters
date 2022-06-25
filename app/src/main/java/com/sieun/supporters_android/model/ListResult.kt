@@ -15,6 +15,7 @@ data class CategoryItem(
     val id: Long,
     val title: String,
     @SerializedName("description")val desc: String,
+    @SerializedName("period_id") val periodId: Int,
     @SerializedName("site_url") val siteUrl: String,
     @SerializedName("thumbnail_url") val thumbnailUrl: String
 ) {
