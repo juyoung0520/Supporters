@@ -44,6 +44,14 @@
                 android:gravity="center_vertical" >
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/list_setting_all"
+                    android:text="@string/list_setting_all"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:layout_width="90dp"
+                    android:layout_height="32dp" />
+
+                <com.google.android.material.chip.Chip
                     android:id="@+id/list_setting_long"
                     android:text="@string/list_setting_long"
                     android:textSize="12sp"

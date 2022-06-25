@@ -5,4 +5,5 @@
     <string name="desc_item_navigation">move to item\'s detail</string>
     <string name="list_setting_long">장기후원</string>
     <string name="list_setting_short">단기후원</string>
+    <string name="list_setting_all">전체</string>
 </resources>
