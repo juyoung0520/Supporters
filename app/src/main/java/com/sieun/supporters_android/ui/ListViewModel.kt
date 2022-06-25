@@ -8,4 +8,5 @@ import javax.inject.Inject
 @HiltViewModel
 class ListViewModel @Inject constructor(
     private val repo: ApiRepository
-) : ViewModel()
+) : ViewModel() {
+}
