@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/bg_ractengle_radius_12dp.xml" value="0.1855" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_category.xml" value="0.26875" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_banner.xml" value="0.1796448087431694" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_detail.xml" value="0.1796448087431694" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_home.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_list.xml" value="0.1796448087431694" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.19174265450861194" />
       </map>
     </option>
   </component>
