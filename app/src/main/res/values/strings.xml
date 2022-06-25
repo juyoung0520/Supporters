@@ -6,4 +6,5 @@
     <string name="list_setting_long">장기후원</string>
     <string name="list_setting_short">단기후원</string>
     <string name="list_setting_all">전체</string>
+    <string name="list_category_thumbnail">Category Image</string>
 </resources>
