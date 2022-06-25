@@ -17,7 +17,6 @@
             android:id="@+id/category_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:background="@drawable/bg_rectangle_bottom_40dp"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/list_category_thumbnail"/>
