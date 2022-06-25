@@ -35,11 +35,18 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/list_chip_group_setting"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            app:layout_constraintTop_toBottomOf="@id/list_appbar" >
+        </com.google.android.material.chip.ChipGroup>
+
         <include layout="@layout/infinite_list"
             android:id="@+id/list_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/list_appbar"
+            app:layout_constraintTop_toBottomOf="@id/list_chip_group_setting"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
