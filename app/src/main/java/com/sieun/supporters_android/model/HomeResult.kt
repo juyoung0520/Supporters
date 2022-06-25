@@ -3,10 +3,6 @@ package com.sieun.supporters_android.model
 import com.google.gson.annotations.SerializedName
 
 data class HomeResult(
-    val home: Home
-)
-
-data class Home(
     val banners: List<Banner>,
     val categories: List<Category>
 )

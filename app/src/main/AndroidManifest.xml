@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sieun.supporters_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -15,7 +17,7 @@
         android:theme="@style/Theme.Supportersandroid"
         tools:targetApi="31">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.BannerActivity" />
         <activity android:name=".ui.DetailActivity" />
