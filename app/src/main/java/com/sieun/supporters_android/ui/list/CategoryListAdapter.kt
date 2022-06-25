@@ -3,6 +3,8 @@ package com.sieun.supporters_android.ui.list
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -27,7 +29,7 @@ class CategoryListAdapter(private val categoryName: String) :
     }
 
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
-        holder.binding.categoryItem = getItem(position)
+        holder.bind(getItem(position))
     }
 
 }
@@ -42,6 +44,24 @@ class CategoryItemViewHolder(val binding: ItemInfiniteListBinding, private val c
                 .let {
                     binding.root.context.startActivity(it)
                 }
+        }
+    }
+
+    fun bind(categoryItem: CategoryItem) {
+        binding.categoryItem = categoryItem
+        binding.itemContainerTags.removeAllViews()
+        categoryItem.tags.split(",").forEach {
+            TextView(binding.root.context).apply {
+                setTextColor(resources.getColor(R.color.gray02))
+                background = resources.getDrawable(R.drawable.tv_bg_rectangle)
+                text = "#$it"
+                layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).apply {
+                    setMargins(8,4,8,4)
+                    setPadding(12,0,12,0)
+                }
+            }.also {
+                binding.itemContainerTags.addView(it)
+            }
         }
     }
 

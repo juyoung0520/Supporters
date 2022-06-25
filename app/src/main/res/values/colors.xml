@@ -12,4 +12,5 @@
     <color name="point">#FFFF4A55</color>
     <color name="gray06">#F0F3F4</color>
     <color name="gray02">#585858</color>
+    <color name="black02">#212121</color>
 </resources>
