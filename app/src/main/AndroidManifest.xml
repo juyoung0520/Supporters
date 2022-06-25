@@ -29,6 +29,7 @@
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.BannerActivity" />
         <activity android:name=".ui.DetailActivity" />
+        <activity android:name=".ui.WebActivity" />
     </application>
 
 </manifest>
