@@ -21,6 +21,23 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.12047101449275362" />
         <entry key="app/src/main/res/layout/item_banner.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.10462962962962963" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/drawable/bg_ractengle_radius_12dp.xml" value="0.122" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/drawable/bg_rectangle_bottom_radius_40dp.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/drawable/bg_rectangle_radius_40dp.xml" value="0.1935" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/drawable/bg_round_tag.xml" value="0.122" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/drawable/btn_round.xml" value="0.122" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/font/pretendard.xml" value="0.11372381359555365" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_banner.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_list.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_splash.xml" value="0.20478837109876016" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/activity_web.xml" value="0.1" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/infinite_list.xml" value="0.10119047619047619" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/item_banner.xml" value="0.13191296464188576" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/item_infinite_list.xml" value="0.264" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/item_tag.xml" value="0.15519452757588714" />
+        <entry key="..\:/Users/JY/AndroidStudioProjects/Supporters/app/src/main/res/layout/item_tag_list.xml" value="0.1" />
       </map>
     </option>
   </component>

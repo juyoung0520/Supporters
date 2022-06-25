@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="activity"
+            type="com.sieun.supporters_android.ui.DetailActivity" />
+
+        <variable
             name="vm"
             type="com.sieun.supporters_android.ui.DetailViewModel" />
     </data>
@@ -49,6 +53,7 @@
             android:id="@+id/detail_main_iv"
             android:layout_width="match_parent"
             android:layout_height="240dp"
+            app:image="@{vm.item.thumbnailUrl}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_top_bar_v" />
 
@@ -93,7 +98,7 @@
             android:id="@+id/detail_description_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/pretendard_regular"
             android:text="@{vm.item.desc}"
@@ -104,12 +109,11 @@
 
         <Button
             android:id="@+id/detail_supprot_btn"
-            android:layout_width="0dp"
-            android:layout_height="49dp"
-            android:layout_marginHorizontal="75dp"
-            android:layout_marginBottom="57dp"
-            android:background="@drawable/btn_round"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/btn_rectangle_top_radius_40dp"
             android:fontFamily="@font/pretendard_bold"
+            android:onClick="@{()-> activity.onClickButton(vm.item)}"
             android:text="@string/btn_support_navigation"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
