@@ -36,6 +36,7 @@ class CategoryAdapter(
             onClickItem: (Category) -> Unit,
             width: Int
         ) = with(binding) {
+            ivCategory.clipToOutline = true
             ivCategory.layoutParams = ViewGroup.LayoutParams(width, width)
             this.item = item
             root.setOnClickListener { onClickItem(item) }

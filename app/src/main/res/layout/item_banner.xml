@@ -11,7 +11,9 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
+        tools:background="@color/teal_200"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -19,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="344dp"
             android:background="@drawable/bg_rectangle_bottom_radius_40dp"
-            android:clipToOutline="true"
             android:scaleType="centerCrop"
             app:image="@{item.imageURL}"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +37,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="#Pray_For_Ukraine\n우크라이나에게 희망을!" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
