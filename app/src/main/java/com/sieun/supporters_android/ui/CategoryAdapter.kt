@@ -30,8 +30,9 @@ class CategoryAdapter(
                 .let(::ViewHolder)
         }
 
-        fun bind(item: Category) = with(binding) {
+        fun bind(item: Category, onClickItem: (Category) -> Unit) = with(binding) {
             this.item = item
+            root.setOnClickListener { onClickItem(item) }
         }
     }
 
@@ -39,5 +40,5 @@ class CategoryAdapter(
         ViewHolder.from(parent)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickItem)
 }

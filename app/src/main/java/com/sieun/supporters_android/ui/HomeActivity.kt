@@ -11,7 +11,6 @@ import com.sieun.supporters_android.databinding.ActivityHomeBinding
 import com.sieun.supporters_android.model.Banner
 import com.sieun.supporters_android.model.Category
 import dagger.hilt.android.AndroidEntryPoint
-import me.relex.circleindicator.CircleIndicator2
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -33,9 +32,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initView(binding: ActivityHomeBinding) = with(binding) {
         rvCategory.adapter = categoryAdapter
+
+        val rvBanner = rvBanner.apply { adapter = bannerAdapter }
         val snapHelper = PagerSnapHelper().apply { attachToRecyclerView(rvBanner) }
-        rvBanner.adapter = bannerAdapter
-        (indicator as? CircleIndicator2)?.attachToRecyclerView(rvBanner, snapHelper)
+        indicator.attachToRecyclerView(rvBanner, snapHelper)
+        bannerAdapter.registerAdapterDataObserver(indicator.adapterDataObserver)
     }
 
     private fun onClickBanner(banner: Banner) {

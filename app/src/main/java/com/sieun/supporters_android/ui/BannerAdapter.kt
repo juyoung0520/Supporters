@@ -30,8 +30,9 @@ class BannerAdapter(
                 .let(::ViewHolder)
         }
 
-        fun bind(item: Banner) = with(binding) {
+        fun bind(item: Banner, onClickItem: (Banner) -> Unit) = with(binding) {
             this.item = item
+            ivBanner.setOnClickListener { onClickItem(item) }
         }
     }
 
@@ -39,5 +40,5 @@ class BannerAdapter(
         ViewHolder.from(parent)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onClickItem)
 }

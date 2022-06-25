@@ -26,10 +26,14 @@
             tools:listitem="@layout/item_banner"
             tools:background="@color/teal_200" />
 
-        <me.relex.circleindicator.CircleIndicator
+        <me.relex.circleindicator.CircleIndicator2
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            app:ci_drawable="@drawable/ic_arrow_back_ios_24"
+            app:ci_drawable_unselected="@drawable/ic_arrow_forward_ios_24"
+            app:ci_height="10dp"
+            app:ci_width="10dp"
             app:layout_constraintBottom_toBottomOf="@id/rv_banner" />
 
         <TextView
