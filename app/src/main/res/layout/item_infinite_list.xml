@@ -50,13 +50,13 @@
             app:layout_constraintTop_toBottomOf="@id/item_title"
             tools:text="Description 1줄" />
 
-
         <ImageButton
             android:id="@+id/item_arrow_button"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_arrow_forward_ios_24"
             android:layout_marginStart="16dp"
+            android:background="@null"
             app:layout_constraintLeft_toRightOf="@id/item_title"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
