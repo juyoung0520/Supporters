@@ -38,6 +38,6 @@ class ApiModule {
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
     companion object {
-        const val BASE_URL = "https://7628-118-129-228-11.jp.ngrok.io/"
+        const val BASE_URL = "https://2fe7-118-129-228-11.jp.ngrok.io/"
     }
 }
