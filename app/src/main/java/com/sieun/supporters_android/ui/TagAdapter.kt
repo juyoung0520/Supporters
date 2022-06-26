@@ -27,7 +27,7 @@ class TagAdapter: ListAdapter<String, TagAdapter.ViewHolder>(callback) {
                 .let(::ViewHolder)
         }
 
-        fun bind(item: String) = with(binding) {
+        fun bind(tag: String) = with(binding) {
             this.tag = tag
         }
     }
