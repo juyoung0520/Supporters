@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
+
 @BindingAdapter("items")
 fun <T, VH : RecyclerView.ViewHolder> RecyclerView.setItems(items: List<T>?) {
     if (items == null) return

@@ -6,17 +6,15 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.sieun.supporters_android.R
-import com.sieun.supporters_android.databinding.ActivityBannerBinding
 import com.sieun.supporters_android.databinding.ActivityDetailBinding
 import com.sieun.supporters_android.model.CategoryItem
 import com.sieun.supporters_android.ui.list.CategoryItemViewHolder.Companion.ITEM_ID
-import com.sieun.supporters_android.ui.list.CategoryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private val viewModel: DetailViewModel by viewModels()
-    private val tagAdapter: TagAdapter by lazy { TagAdapter() }
+    private val tagAdapter by lazy { TagAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

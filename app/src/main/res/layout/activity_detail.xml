@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="236dp"
             app:image="@{vm.item.thumbnailUrl}"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_top_bar_v" />
 
@@ -80,6 +81,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/detail_tag_rv"
+                app:items="@{vm.tags}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
