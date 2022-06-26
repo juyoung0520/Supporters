@@ -58,7 +58,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/banner_top_bar_v" />
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:id="@+id/banner_description_tv"
             android:layout_width="match_parent"
             android:layout_height="120dp"
@@ -79,7 +79,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <include
             android:id="@+id/list_container"
